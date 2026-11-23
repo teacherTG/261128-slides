@@ -958,7 +958,7 @@ button{font-family:inherit;cursor:pointer;border:none}
 
 <section class="slide s-app">
   <div class="crumb">체육교과수업 · ① 규칙 마스터</div>
-  <div class="apphead"><h2>규칙 마스터 시리즈</h2><div class="tabs"><button class="tab on" data-app="bbmaster">야구</button><button class="tab" data-app="ultimaster">얼티밋</button><button class="tab" data-app="netmaster">넷볼</button></div><button class="openw" title="앱을 새 창에서 크게 열기">↗ 새 창</button></div>
+  <div class="apphead"><h2>규칙 마스터 시리즈</h2><div class="tabs"><button class="tab on" data-app="bbmaster">야구</button><button class="tab" data-app="ultimaster">얼티밋</button><button class="tab" data-app="netmaster">넷볼</button><button class="tab" data-app="futsalmaster">풋살</button></div><button class="openw" title="앱을 새 창에서 크게 열기">↗ 새 창</button></div>
   <div class="appframe" data-app="bbmaster"><div class="ld">앱 불러오는 중…</div></div>
 </section>
 
@@ -1365,7 +1365,10 @@ function loadApp(frame, k){
     const bar = document.createElement('div'); bar.className = 'urlbar';
     bar.innerHTML = '🔗 구글 앱스 스크립트 앱' + (APPURL[k].includes('/a/macros/') ? ' · 학교 계정 로그인이 필요해요' : '') + ' · 화면이 안 나오면 오른쪽 위 <b>↗ 새 창</b>으로 열어 주세요';
     frame.appendChild(bar); f.className = 'u'; f.src = APPURL[k];
-  } else f.srcdoc = appHtml(k);
+  } else if(APPDATA[k]) f.srcdoc = appHtml(k);
+  const ld = frame.querySelector('.ld');
+  if(!APPURL[k] && !APPDATA[k]){ if(ld) ld.textContent = '⚽ 링크 준비 중이에요'; return; }
+  if(ld) ld.textContent = '앱 불러오는 중…';
   frame.appendChild(f);
 }
 document.querySelectorAll('.s-app').forEach(sl => {
@@ -1376,6 +1379,7 @@ document.querySelectorAll('.s-app').forEach(sl => {
   sl.querySelector('.openw').addEventListener('click', () => {
     const k = frame.dataset.app;
     if(APPURL[k]){ window.open(APPURL[k], '_blank', 'noopener'); return; }
+    if(!APPDATA[k]) return;
     const url = URL.createObjectURL(new Blob([appHtml(k)], {type:'text/html'}));
     window.open(url, '_blank');
   });
