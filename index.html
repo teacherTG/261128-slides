@@ -1002,7 +1002,7 @@ button{font-family:inherit;cursor:pointer;border:none}
     <button class="rm4-c" data-app="bbmaster"><div class="pv"><div class="ld">불러오는 중…</div></div><div class="nm">⚾ 야구</div></button>
     <button class="rm4-c" data-app="ultimaster"><div class="pv"><div class="ld">불러오는 중…</div></div><div class="nm">🥏 얼티밋</div></button>
     <button class="rm4-c" data-app="netmaster"><div class="pv"><div class="ld">불러오는 중…</div></div><div class="nm">🏀 넷볼</div></button>
-    <button class="rm4-c" data-app="futsalmaster"><div class="pv"><div class="ld">불러오는 중…</div></div><div class="nm">⚽ 풋살</div></button>
+    <button class="rm4-c" data-app="futsalmaster" data-url="https://pekimt.github.io/futsal/"><div class="pv"><div class="ld">불러오는 중…</div></div><div class="nm">⚽ 풋살</div></button>
   </div>
   <div class="appframe rm4-full"><div class="ld">앱 불러오는 중…</div></div>
 </section>
@@ -1417,7 +1417,7 @@ const APPDATA = JSON.parse(document.getElementById('appdata').textContent);
 const appCache = {};
 function appHtml(k){ return appCache[k] || (appCache[k] = new TextDecoder().decode(Uint8Array.from(atob(APPDATA[k]), c => c.charCodeAt(0)))); }
 const APPURL = {};
-document.querySelectorAll('.tab[data-url]').forEach(t => APPURL[t.dataset.app] = t.dataset.url);
+document.querySelectorAll('.tab[data-url], .rm4-c[data-url]').forEach(t => APPURL[t.dataset.app] = t.dataset.url);
 function loadApp(frame, k){
   if(frame.dataset.loaded === k) return;
   frame.dataset.app = k; frame.dataset.loaded = k;
