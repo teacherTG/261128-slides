@@ -429,7 +429,7 @@ a.url{text-decoration:none;display:inline-block}
 #ov .ov-s{position:absolute;left:0;top:0;width:1600px;height:900px;transform:scale(.175);transform-origin:0 0;pointer-events:none;color:var(--ink);text-align:left}
 #ov .ov-s .slide{opacity:1;visibility:visible;transform:none;transition:none}
 #ov .ov-s *{animation-duration:.001s!important;animation-delay:0s!important;animation-iteration-count:1!important;transition:none!important}
-#ov .ov-s .frag,#ov .ov-s .letters span{opacity:1;transform:none}
+#ov .ov-s .frag,#ov .ov-s .arw,#ov .ov-s .letters span{opacity:1;transform:none}
 #ov .ov-l{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #ov .ov-l b{color:var(--blue2);margin-right:6px}
 
@@ -663,7 +663,8 @@ a.url{text-decoration:none;display:inline-block}
 .uc .k{font-size:22px;font-weight:800;color:var(--pink)}
 .uc h3{font-size:38px;font-weight:900;color:var(--blue)}
 .uc p{font-size:25px;line-height:1.5;color:var(--sub)}
-.arw{font-size:50px;color:var(--blue2);font-weight:900}
+.arw{font-size:50px;color:var(--blue2);font-weight:900;opacity:0;transition:opacity .45s}
+.arw:has(+ .frag.on){opacity:1}
 .use3.four{grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:14px}
 .use3.four .uc{padding:36px 18px;gap:14px}
 .use3.four .uc h3{font-size:34px}
@@ -1158,11 +1159,11 @@ a.url{text-decoration:none;display:inline-block}
   <div class="htitle">규칙 마스터, 수업에서 이렇게 써요</div>
   <div class="use3 four">
     <div class="uc frag"><div class="ic">📺</div><div class="k">STEP 1</div><h3>함께 보기</h3><p>수업 시작 때<br>큰 화면으로 오늘 종목의<br>핵심 규칙을 함께 확인</p></div>
-    <div class="arw frag">→</div>
+    <div class="arw">→</div>
     <div class="uc frag"><div class="ic">📱</div><div class="k">STEP 2</div><h3>스스로 찾기</h3><p>경기 중 헷갈리는 순간<br>휴대폰·태블릿으로<br>학생이 직접 찾아보기</p></div>
-    <div class="arw frag">→</div>
+    <div class="arw">→</div>
     <div class="uc frag"><div class="ic">🏃</div><div class="k">STEP 3</div><h3>경기에 적용</h3><p>확인한 규칙을<br>바로 경기에 적용하며<br>정확하게 익히기</p></div>
-    <div class="arw frag">→</div>
+    <div class="arw">→</div>
     <div class="uc frag hot"><div class="ic">🧩</div><div class="k">STEP 4</div><h3>퀴즈로 반복</h3><p>풀 때마다<br><b>새로운 문제가 생성</b>되는<br>퀴즈로 규칙을<br>계속 학습하기</p></div>
   </div>
 </section>
@@ -1308,9 +1309,9 @@ a.url{text-decoration:none;display:inline-block}
   <div class="htitle">수행평가 채점 앱, 수업에서 이렇게 써요</div>
   <div class="use3">
     <div class="uc frag"><div class="ic">👤</div><div class="k">STEP 1</div><h3>학생 선택</h3><p>채점할 학생(모둠)을<br>눌러 선택</p></div>
-    <div class="arw frag">→</div>
+    <div class="arw">→</div>
     <div class="uc frag"><div class="ic">✅</div><div class="k">STEP 2</div><h3>기준별 채점</h3><p>평가 기준마다<br>점수를 터치</p></div>
-    <div class="arw frag">→</div>
+    <div class="arw">→</div>
     <div class="uc frag"><div class="ic">📊</div><div class="k">STEP 3</div><h3>자동 집계</h3><p>합계·환산 점수가<br>바로 계산</p></div>
   </div>
 </section>
