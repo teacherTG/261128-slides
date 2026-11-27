@@ -335,15 +335,18 @@ button{font-family:inherit;cursor:pointer;border:none}
 .slide.active .rm>.photo{animation-delay:.3s}
 @keyframes photoIn{from{opacity:0;transform:translateY(50px) scale(.9)}to{opacity:1;transform:none}}
 .s-try2 .htitle{margin-bottom:30px}
-.trybox{flex:1;display:grid;grid-template-columns:520px 1fr;gap:60px;align-items:center}
+.trybox{flex:1;display:grid;grid-template-columns:400px 1fr 400px;gap:30px;align-items:center}
 .qrwrap{display:flex;flex-direction:column;align-items:center;gap:16px}
-.qr{width:430px;border-radius:16px;overflow:hidden;cursor:zoom-in;box-shadow:0 0 0 6px var(--sky),0 16px 30px rgba(29,78,216,.18);transition:transform .25s}
+.qr{width:350px;border-radius:16px;overflow:hidden;cursor:zoom-in;box-shadow:0 0 0 6px var(--sky),0 16px 30px rgba(29,78,216,.18);transition:transform .25s}
 .qr img{display:block;width:100%}
 .qr:hover{transform:scale(1.04)}
 .slide.active .qr{animation:qrIn .8s cubic-bezier(.2,1.4,.4,1)}
 @keyframes qrIn{from{transform:rotate(-12deg) scale(.5);opacity:0}to{transform:none;opacity:1}}
-.qrwrap .url{font-size:62px;padding:4px 30px;border-width:4px}
-.pen{font-family:"Nanum Pen Script",cursive;color:var(--pink);font-size:60px;white-space:nowrap;line-height:1.35;text-align:center}
+.qrwrap .url{font-size:46px;padding:4px 24px;border-width:4px}
+.qlab{font-size:38px;font-weight:900;color:var(--blue);padding:8px 24px;border:4px solid var(--blue2);border-radius:30px;background:#fff}
+.s-try2 .qrwrap .copied{position:absolute;top:100%;margin-top:8px!important}
+.s-try2 .qrwrap{position:relative}
+.pen{font-family:"Nanum Pen Script",cursive;color:var(--pink);font-size:50px;white-space:nowrap;line-height:1.35;text-align:center}
 .slide.active .pen span{display:block;animation:dropIn .6s both}
 .slide.active .pen span:nth-child(2){animation-delay:.2s}.slide.active .pen span:nth-child(3){animation-delay:.4s}
 
@@ -372,6 +375,21 @@ button{font-family:inherit;cursor:pointer;border:none}
 .lg-pt h3{font-size:34px;font-weight:900;margin-bottom:8px}
 .lg-pt p{font-size:23px;line-height:1.5;color:#cbd5e1}
 .lg-pt p b{color:var(--yellow)}
+.lg-app{position:relative;border-radius:24px;overflow:hidden;border:4px solid var(--dark);background:#f1f5f9;padding:0;cursor:zoom-in;box-shadow:0 10px 22px rgba(0,0,0,.14);transition:transform .25s cubic-bezier(.2,1.4,.4,1),border-color .2s,opacity .45s;text-align:left;font-family:inherit}
+.lg-app:hover{transform:translateY(-4px);border-color:var(--blue)}
+.lg-app .pv{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.lg-app .pv iframe{position:absolute;left:0;top:0;width:250%;height:250%;border:0;transform:scale(.4);transform-origin:0 0;background:#fff}
+.lg-app .ld{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--muted);font-weight:700}
+.lg-app .nm{position:absolute;left:12px;bottom:12px;background:var(--dark);color:#fff;font-size:22px;font-weight:900;padding:8px 16px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.lg-app .nm small{font-size:16px;font-weight:700;color:var(--yellow);margin-left:6px}
+.lg-app:hover .nm{background:var(--blue)}
+#appmodal{position:fixed;inset:0;z-index:9000;background:rgba(15,23,42,.78);display:none;align-items:center;justify-content:center;padding:3vh 3vw}
+#appmodal.on{display:flex}
+#appmodal .box{width:100%;height:100%;display:flex;flex-direction:column;gap:12px}
+#appmodal .bar{display:flex;align-items:center;gap:12px;color:#fff;font-size:22px;font-weight:900}
+#appmodal .bar span{flex:1}
+#appmodal .bar button{font-family:inherit;font-size:18px;font-weight:800;padding:10px 16px;border-radius:10px;border:0;background:#fff;color:var(--dark);cursor:pointer}
+#appmodal .appframe{flex:1;border-color:#fff}
 .realchips{display:flex;justify-content:center;gap:18px;margin:-12px 0 22px}
 .realchips span{background:var(--sky2);border:3px solid var(--sky);border-radius:30px;padding:8px 22px;font-size:25px;font-weight:800}
 .realchips span b{color:var(--blue)}
@@ -834,6 +852,10 @@ button{font-family:inherit;cursor:pointer;border:none}
       <div class="copied" id="copied" style="margin-top:0">✔ 주소가 복사되었어요!</div>
     </div>
     <div class="pen"><span>발표 듣는 동안 부담 없이 둘러보세요^-^</span><span>마음에 드는 앱은 학교에서 써보셔도 좋아요</span><span>피드백은 언제든 환영이에요!!</span></div>
+    <div class="qrwrap">
+      <div class="qr" data-zoom title="클릭하면 크게 보여요"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYwAAAGMAQAAAADhQqjnAAACPklEQVR4nO2cS24jMQxEqwbZSzfw/Y+VG0gnYBakfvYAQdtJwMkUF0Z3Ww+2AIJVkinTcDH6n6sEIESIECHfi3BGBSvQGQ9rDNoHJJ+LkKRIMQ8A9k7ejKTfopP1GJB9LkKyInvVQifKSLCbWbsbkH0uQpIhb3f3BKxXl0sD2PmwKEg7FyH/DMIKl0VXyW/6FCH/G2IWmujWiySKoTP82D4g/VyEZER6rBr90SpfxZYxWwNyz0VIOuQNwCGH04B12rg+9TLtXITkRGBmro/LevlORYOL45DIMbKlnYuQnEisKwmYryjHbURpKMbjYdq5CMmJhFZ6drEYenWJJMBiHOnH0hBplnYuQnIiGLv3SyLjusW7UzGtQVop5DoSWul55mo4FRPjoSFWmvZzX0zIr0Gmk4e1uJ7mPwqXbctK1TEhl2N4/mIc3t7cgO1OrDT0itLkx4RcR5Yf8zo2/di+lYFpzFTHhFyPrWkHa6NsSORy/r5jZsoxIZcjEmwWq7H7ui0kx8imOibkSWTWMZKreQy42/nnTT2KQl7SymNdebb0zPqmOibkOrLtweLYel2tF/tI5ZiQ62FnxF7ZZvjnQkA5JuRL6thf3ipbTVOOCXkO2c8lNWBkV3TDzhXlO6397BcT8huQ03rthv+hk19aKeSV35JmGOIM79YQW9UHK+QrEU+wMs4l7Wct1c8v5AVkO3YU1mu+ssKzS+eShDyvlX31VnMzYxztr9Yr1T8m5Enk8Rj4Z6H/hhIiREgu5AMuIKUw+JvYAwAAAABJRU5ErkJggg==" alt="발표 슬라이드 QR코드"></div>
+      <div class="qlab">📑 발표 슬라이드</div>
+    </div>
   </div>
 </section>
 
@@ -902,7 +924,7 @@ button{font-family:inherit;cursor:pointer;border:none}
   </div>
   <div class="lg-pts">
     <div class="lg-pt frag"><div class="ic">📱</div><div><h3>리그 운영 웹앱 제작</h3><p><b>모든 학생</b>이 경기 대진표 · 경기 결과 ·<br><b>실시간 순위표</b>를 언제든 확인</p></div></div>
-    <div class="lg-pt frag"><div class="ic">🍪</div><div><h3>최종 순위에 따라 간식 제공</h3><p>리그 <b>최종 순위</b>를 기준으로<br>간식을 제공해 참여 동기 UP</p></div></div>
+    <button class="lg-app frag" data-app="dhleague"><div class="pv"><div class="ld">리그 운영표 불러오는 중…</div></div><div class="nm">🏆 2026 스포츠리그 운영표 <small>클릭해서 크게 ↗</small></div></button>
   </div>
 </section>
 
@@ -925,12 +947,6 @@ button{font-family:inherit;cursor:pointer;border:none}
   <div class="crumb">학교스포츠</div>
   <div class="apphead"><h2>① 대진표 생성<small>빅발리볼 대진표 자동 생성기</small></h2><button class="openw" title="앱을 새 창에서 크게 열기">↗ 새 창</button></div>
   <div class="appframe" data-app="tgdraw"><div class="ld">앱 불러오는 중…</div></div>
-</section>
-
-<section class="slide s-app">
-  <div class="crumb">학교스포츠</div>
-  <div class="apphead"><h2>② 리그 운영표<small>2026 스포츠리그</small></h2><button class="openw" title="앱을 새 창에서 크게 열기">↗ 새 창</button></div>
-  <div class="appframe" data-app="dhleague"><div class="ld">앱 불러오는 중…</div></div>
 </section>
 
 <section class="slide">
@@ -1214,6 +1230,7 @@ button{font-family:inherit;cursor:pointer;border:none}
 <div id="ov"><div class="ov-h"><h2>전체 슬라이드<span>클릭하면 바로 이동해요 · O 키로 열고 닫기</span></h2><button class="x" title="닫기 (Esc)">✕</button></div><div class="ov-g"></div></div>
 </div></div>
 
+<div id="appmodal"><div class="box"><div class="bar"><span>🏆 2026 스포츠리그 운영표</span><button class="mw">↗ 새 창</button><button class="mx">✕ 닫기 (Esc)</button></div><div class="appframe"><div class="ld">앱 불러오는 중…</div></div></div></div>
 <canvas id="fx"></canvas>
 <div id="nav">
   <button id="bPrev" title="이전 (←)">◀</button>
@@ -1406,6 +1423,7 @@ function onEnter(s){
   if(s.classList.contains('s-title')){ s.querySelectorAll('.letters span').forEach(sp => { sp.style.animation='none'; void sp.offsetWidth; sp.style.animation=''; }); }
   if(s.classList.contains('s-end')) setTimeout(()=>{ confetti(); sfx.win(); }, 300);
   if(s.classList.contains('s-rm4')){ rm4Enter(s); return; }
+  s.querySelectorAll('.lg-app').forEach(lgEnter);
   const af = s.querySelector('.appframe'); if(af) loadApp(af, af.dataset.app);
 }
 
@@ -1446,6 +1464,27 @@ document.querySelectorAll('.s-app').forEach(sl => {
     window.open(url, '_blank');
   });
 });
+/* 스포츠리그 슬라이드: 리그 운영표 미리보기 → 클릭하면 크게 */
+function lgEnter(c){
+  if(c.dataset.loaded) return; c.dataset.loaded = 1;
+  const k = c.dataset.app, pv = c.querySelector('.pv'), ld = pv.querySelector('.ld');
+  if(!APPDATA[k]){ ld.textContent = '앱을 불러올 수 없어요'; return; }
+  const f = document.createElement('iframe'); f.setAttribute('tabindex','-1'); f.srcdoc = appHtml(k);
+  f.addEventListener('load', () => ld.remove()); pv.appendChild(f);
+}
+const appModal = document.getElementById('appmodal');
+const closeModal = () => appModal.classList.remove('on');
+document.querySelectorAll('.lg-app').forEach(c => c.addEventListener('click', () => {
+  appModal.classList.add('on'); loadApp(appModal.querySelector('.appframe'), c.dataset.app); sfx.whoosh();
+}));
+appModal.querySelector('.mx').addEventListener('click', closeModal);
+appModal.addEventListener('click', e => { if(e.target === appModal) closeModal(); });
+appModal.querySelector('.mw').addEventListener('click', () => {
+  const k = appModal.querySelector('.appframe').dataset.app; if(!APPDATA[k]) return;
+  window.open(URL.createObjectURL(new Blob([appHtml(k)], {type:'text/html'})), '_blank');
+});
+addEventListener('keydown', e => { if(appModal.classList.contains('on')){ if(e.key === 'Escape') closeModal(); e.stopImmediatePropagation(); } }, true);
+
 /* 규칙 마스터: 네 칸 모아보기 → 클릭하면 크게 */
 function rm4Enter(sl){
   sl.classList.remove('full');
