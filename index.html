@@ -167,6 +167,7 @@ button{font-family:inherit;cursor:pointer;border:none}
 .s-try{align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle at 50% 40%,#eff6ff,#fff 70%)}
 .s-try h2{font-size:80px;font-weight:900;margin-bottom:40px}
 .url{font-size:110px;font-weight:900;color:var(--blue);letter-spacing:-2px;padding:10px 50px;border:6px dashed var(--blue2);border-radius:30px;cursor:pointer;transition:transform .2s,background .2s;background:#fff}
+a.url{text-decoration:none;display:inline-block}
 .url:hover{transform:scale(1.05) rotate(-1deg);background:var(--sky2)}
 .s-try p{font-size:30px;color:var(--sub);line-height:1.6;margin-top:46px}
 .copied{font-size:24px;color:var(--green);font-weight:800;height:34px;margin-top:16px;opacity:0;transition:opacity .3s}
@@ -928,8 +929,7 @@ button{font-family:inherit;cursor:pointer;border:none}
   <div class="trybox">
     <div class="qrwrap">
       <div class="qr" data-zoom title="클릭하면 크게 보여요"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAdAAAAHQCAIAAACeP6xXAAAIWUlEQVR4nO3cQW4jRxBFQdPQ/a/MWY8XAgpSPma5Iw4gFZvNh1r91/v9/geAef9++gAATyG4ABHBBYgILkBEcAEiggsQEVyAiOACRAQXICK4ABHBBYgILkBEcAEiggsQEVyAiOACRAQXICK4ABHBBYgILkBEcAEiggsQEVyAiOACRAQXICK4ABHBBYgILkBEcAEiggsQEVyAyNf0P3i9XtP/4lHe7/enj/CX27/f6ed5+nxOz3P7899m+n1wwwWICC5ARHABIoILEBFcgIjgAkQEFyAiuAARwQWICC5ARHABIoILEBFcgIjgAkQEFyAyvod7atve67TpPdNte6nTe69Pe39OPe35bHv/3XABIoILEBFcgIjgAkQEFyAiuAARwQWICC5ARHABIoILEBFcgIjgAkQEFyAiuAARwQWIrNvDPbVt7/Jpe6O379tue3+22fZ8bv99ueECRAQXICK4ABHBBYgILkBEcAEiggsQEVyAiOACRAQXICK4ABHBBYgILkBEcAEiggsQuX4Pl981vTc6vZ877fbz81luuAARwQWICC5ARHABIoILEBFcgIjgAkQEFyAiuAARwQWICC5ARHABIoILEBFcgIjgAkTs4f7PTe/bnu69np5n2/nhJ9xwASKCCxARXICI4AJEBBcgIrgAEcEFiAguQERwASKCCxARXICI4AJEBBcgIrgAEcEFiFy/hzu9l8r3Tp//9P7str3d29/P28+/jRsuQERwASKCCxARXICI4AJEBBcgIrgAEcEFiAguQERwASKCCxARXICI4AJEBBcgIrgAkXV7uNN7qU9z+jyn92237eduO//0/qzf12e54QJEBBcgIrgAEcEFiAguQERwASKCCxARXICI4AJEBBcgIrgAEcEFiAguQERwASKCCxB5Te9v8lnT+6dP24f1e+En3HABIoILEBFcgIjgAkQEFyAiuAARwQWICC5ARHABIoILEBFcgIjgAkQEFyAiuAARwQWIfE3/A3uj39v2fG5//tPPc3pfeNq2feFp295nN1yAiOACRAQXICK4ABHBBYgILkBEcAEiggsQEVyAiOACRAQXICK4ABHBBYgILkBEcAEi43u4T9vfPLVtr3PbPu8p5/ne7b+X27nhAkQEFyAiuAARwQWICC5ARHABIoILEBFcgIjgAkQEFyAiuAARwQWICC5ARHABIoILEBnfwz21bY91+jzbPu/0+adte57Tz+f0/Nu+3+nzbHsf3HABIoILEBFcgIjgAkQEFyAiuAARwQWICC5ARHABIoILEBFcgIjgAkQEFyAiuAARwQWIjO/hbtujvH3fdnqf9Pb90+n3h8/a9ns55YYLEBFcgIjgAkQEFyAiuAARwQWICC5ARHABIoILEBFcgIjgAkQEFyAiuAARwQWICC5AZHwP9/Z90tv3bbftC2+z7ft92vvzNG64ABHBBYgILkBEcAEiggsQEVyAiOACRAQXICK4ABHBBYgILkBEcAEiggsQEVyAiOACRF6376VuO/+285zatvd6ats+77Y92W3f16nbz++GCxARXICI4AJEBBcgIrgAEcEFiAguQERwASKCCxARXICI4AJEBBcgIrgAEcEFiAguQOTr0wf4r9v3WE9Nn//07287z6lte7tP+7yntp1/+jxuuAARwQWICC5ARHABIoILEBFcgIjgAkQEFyAiuAARwQWICC5ARHABIoILEBFcgIjgAkTW7eGeun0/d9s+76mn7aU+jf3l3+WGCxARXICI4AJEBBcgIrgAEcEFiAguQERwASKCCxARXICI4AJEBBcgIrgAEcEFiAguQOS1bW/09r3L2/d5p93+ebe9b9t4/7/nhgsQEVyAiOACRAQXICK4ABHBBYgILkBEcAEiggsQEVyAiOACRAQXICK4ABHBBYgILkBkfA+Xz5reb922p3xq2/7ytt/j0/Zqp7nhAkQEFyAiuAARwQWICC5ARHABIoILEBFcgIjgAkQEFyAiuAARwQWICC5ARHABIoILEPma/gfT+6FPc7o3um3v9fZ9Vc/zLtuejxsuQERwASKCCxARXICI4AJEBBcgIrgAEcEFiAguQERwASKCCxARXICI4AJEBBcgIrgAkfE93FP2Oj9reu91257stvOc8nu5ixsuQERwASKCCxARXICI4AJEBBcgIrgAEcEFiAguQERwASKCCxARXICI4AJEBBcgIrgAkXV7uKe27WPevk+67Xmeun3fdtt5pj3t87rhAkQEFyAiuAARwQWICC5ARHABIoILEBFcgIjgAkQEFyAiuAARwQWICC5ARHABIoILELl+D5fftW3Pd9t5pk3v+W57nrfvF59ywwWICC5ARHABIoILEBFcgIjgAkQEFyAiuAARwQWICC5ARHABIoILEBFcgIjgAkQEFyBiD5cf2bZPerqvevse67Z92+nnc/v35YYLEBFcgIjgAkQEFyAiuAARwQWICC5ARHABIoILEBFcgIjgAkQEFyAiuAARwQWICC5A5Po93G17oE8zvU86/f1On+f07287zym/x++54QJEBBcgIrgAEcEFiAguQERwASKCCxARXICI4AJEBBcgIrgAEcEFiAguQERwASKCCxBZt4c7vdf5NNv2T7ft2z7Ntuf/tP1cN1yAiOACRAQXICK4ABHBBYgILkBEcAEiggsQEVyAiOACRAQXICK4ABHBBYgILkBEcAEir6ftUQJ8ihsuQERwASKCCxARXICI4AJEBBcgIrgAEcEFiAguQERwASKCCxARXICI4AJEBBcgIrgAEcEFiAguQERwASKCCxARXICI4AJEBBcgIrgAEcEFiAguQERwASKCCxARXICI4AJEBBcgIrgAkT+GOY+wE6J4KgAAAABJRU5ErkJggg==" alt="joo.is/pe1128 QR코드"></div>
-      <div class="url" id="url" title="클릭해서 주소 복사">joo.is/pe1128</div>
-      <div class="copied" id="copied" style="margin-top:0">✔ 주소가 복사되었어요!</div>
+      <a class="url" id="url" href="https://joo.is/pe1128" target="_blank" rel="noopener" title="클릭하면 사이트로 이동해요">joo.is/pe1128</a>
     </div>
     <div class="pen"><span>당하중학교 선생님들이</span><span>직접 만든 웹앱입니다. 한번 보세요^^</span><span class="gap">발표자료가 수정되었습니다.</span><span>큐알코드로 확인하세요!</span></div>
     <div class="qrwrap">
@@ -1643,11 +1643,6 @@ addEventListener('message', e => { const k = e.data && e.data.deckKey; if(k === 
 /* ---------- cases ---------- */
 document.querySelectorAll('.case').forEach(c => c.addEventListener('click', () => { c.classList.toggle('on'); sfx.up(); }));
 
-/* ---------- copy url ---------- */
-document.getElementById('url')?.addEventListener('click', () => {
-  const ok = () => { const c = document.getElementById('copied'); c.style.opacity = 1; setTimeout(()=>c.style.opacity=0, 1800); sfx.win(); };
-  (navigator.clipboard?.writeText('https://joo.is/pe1128') || Promise.reject()).then(ok, ok);
-});
 
 const stepHook = s => s._step ? s._step() : false;
 
